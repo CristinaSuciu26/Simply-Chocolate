@@ -1,0 +1,20 @@
+{
+  "name": "simply-chocolate",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristinaSuciu26/Simply-Chocolate.git"
+  },
+  "author": "Cristina Suciu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristinaSuciu26/Simply-Chocolate/issues"
+  },
+  "homepage": "https://github.com/CristinaSuciu26/Simply-Chocolate#readme",
+  "description": ""
+}
