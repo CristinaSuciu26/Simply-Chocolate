@@ -4,7 +4,9 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
     "url": "https://github.com/CristinaSuciu26/Simply-Chocolate/issues"
   },
   "homepage": "https://github.com/CristinaSuciu26/Simply-Chocolate#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
