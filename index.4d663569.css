@@ -251,14 +251,14 @@ a {
 .buy-now-modal-content {
   background-color: var(--primary-color);
   text-align: center;
-  border: 1px solid #ededed;
+  border: 1px solid #cec8c8;
   border-radius: 15px;
   width: 90vw;
   max-width: 400px;
   height: auto;
   max-height: 95vh;
   margin: 20px auto;
-  padding: 10px;
+  padding-top: 10px;
   position: relative;
   overflow-y: auto;
 }
@@ -301,18 +301,25 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-top: 15px;
   display: flex;
 }
 
 .modal-img {
+  cursor: pointer;
   background-color: #fff;
-  border: 1px solid #ededed;
+  border: 1px solid #cec8c8;
   border-radius: 20px;
   align-items: center;
   gap: 110px;
+  transition: transform .3s;
   display: flex;
+}
+
+.modal-img:hover {
+  border: 1px solid var(--accent-color);
+  transform: scale(1.1);
 }
 
 .modal-img span {
@@ -330,9 +337,9 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
   width: 100%;
-  padding: 20px;
+  margin-top: 18px;
   display: flex;
 }
 
@@ -344,7 +351,7 @@ a {
 }
 
 .modal-form input {
-  border: 1px solid #eee;
+  border: 1px solid #cec8c8;
   border-radius: 8px;
   width: 263px;
   height: 45px;
@@ -354,7 +361,7 @@ a {
 }
 
 .modal-form textarea {
-  border: 1px solid #eee;
+  border: 1px solid #cec8c8;
   border-radius: 8px;
   width: 263px;
   padding-left: 18px;
@@ -374,6 +381,7 @@ a {
   cursor: pointer;
   border: none;
   border-radius: 50px;
+  margin-bottom: 5px;
 }
 
 .input-wrapper {
@@ -381,5 +389,9 @@ a {
   align-items: baseline;
   gap: 2px;
   display: flex;
+}
+
+.iti__country-list {
+  width: 261px;
 }
 /*# sourceMappingURL=index.4d663569.css.map */

@@ -597,6 +597,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"8lqZg":[function(require,module,exports,__globalThis) {
 var _buyNowModal = require("./js/buyNowModal");
+var _intlTelInput = require("./js/intl-tel-input");
 var _scrollDown = require("./js/scrollDown");
 var _sidebar = require("./js/sidebar");
 document.addEventListener("DOMContentLoaded", async ()=>{
@@ -604,12 +605,13 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         (0, _sidebar.sidebar)();
         (0, _scrollDown.scrollDown)();
         (0, _buyNowModal.buyNowModal)();
+        (0, _intlTelInput.telInput)();
     } catch (error) {
         console.error('Error initializing modules:', error); // Add error logging for better debugging
     }
 });
 
-},{"./js/buyNowModal":"b2shm","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX"}],"b2shm":[function(require,module,exports,__globalThis) {
+},{"./js/buyNowModal":"b2shm","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/intl-tel-input":"coX7G"}],"b2shm":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
@@ -697,6 +699,19 @@ const sidebar = ()=>{
     document.getElementById("toggle-button").addEventListener("click", toggleSidebar);
     // Add event listener to close icon
     document.getElementById("close-icon").addEventListener("click", toggleSidebar);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"coX7G":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "telInput", ()=>telInput);
+const telInput = ()=>{
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+        initialCountry: "us",
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}]},["lIktk","8lqZg"], "8lqZg", "parcelRequire94c2")
