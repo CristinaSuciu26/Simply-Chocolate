@@ -691,7 +691,8 @@ const sidebar = ()=>{
         } else {
             sidebar.style.right = "-520px";
             setTimeout(()=>{
-                sidebar.style.display = "none";
+                socials.style.display = "none";
+                closeIcon.style.display = "none";
             }, 90);
         }
     }
