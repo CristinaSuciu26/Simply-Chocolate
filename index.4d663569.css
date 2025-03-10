@@ -280,6 +280,7 @@ a {
 
 .buy-now-modal-content span {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .buy {
@@ -334,19 +335,23 @@ a {
   font-size: 14px;
 }
 
+.input-group {
+  text-align: left;
+}
+
 .modal-form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   width: 100%;
-  margin-top: 18px;
+  margin-top: 15px;
   display: flex;
 }
 
 .modal-form label {
   color: #333;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -356,7 +361,7 @@ a {
   width: 263px;
   height: 40px;
   padding-left: 18px;
-  font-size: 14px;
+  font-size: 13px;
   display: block;
 }
 
@@ -449,8 +454,7 @@ a {
     flex-direction: column;
     gap: 8px;
     width: 156px;
-    height: 160px;
-    padding: 10px;
+    height: 145px;
   }
 
   .modal-img img {
