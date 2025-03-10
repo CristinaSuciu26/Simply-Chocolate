@@ -254,12 +254,10 @@ a {
   text-align: center;
   border: 1px solid #cec8c8;
   border-radius: 15px;
-  width: 95vw;
-  max-width: 400px;
+  max-width: 320px;
   height: auto;
-  max-height: 93vh;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 15px;
   position: relative;
   overflow-y: auto;
 }
@@ -433,7 +431,6 @@ a {
 
   .buy-now-modal-content {
     max-width: 600px;
-    padding: 15px;
   }
 
   .products-list {
