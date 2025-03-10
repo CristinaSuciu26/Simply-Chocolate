@@ -150,6 +150,7 @@ a {
 }
 
 .header-img img {
+  object-fit: cover;
   border-radius: 30px;
   width: 100%;
   height: auto;
@@ -258,7 +259,7 @@ a {
   height: auto;
   max-height: 95vh;
   margin: 20px auto;
-  padding: 25px;
+  padding: 10px;
   position: relative;
   overflow-y: auto;
 }
@@ -432,6 +433,53 @@ a {
     flex-direction: column;
     align-items: flex-end;
     display: flex;
+  }
+
+  .buy-now-modal-content {
+    max-width: 600px;
+    padding: 15px;
+  }
+
+  .products-list {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .modal-img {
+    flex-direction: column;
+    gap: 20px;
+    width: 160px;
+    height: 196px;
+    padding: 10px;
+  }
+
+  .modal-img img {
+    width: 120px;
+  }
+
+  .personal-info {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .personal-info input {
+    width: 246px;
+    height: 66px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 6px;
+    display: flex;
+  }
+
+  .input-group label {
+    padding-right: 87px;
+  }
+
+  .email input, .phone input, .card input, .comment textarea {
+    width: 500px;
   }
 }
 
