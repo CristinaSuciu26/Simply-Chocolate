@@ -6,7 +6,9 @@
 
 body {
   background-color: var(--primary-color);
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: Montserrat, sans-serif;
   display: flex;
 }
@@ -21,6 +23,10 @@ a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .header {
@@ -42,6 +48,7 @@ a {
 }
 
 .title {
+  text-transform: uppercase;
   font-size: 14px;
   font-style: italic;
   font-weight: 700;
@@ -201,6 +208,8 @@ a {
 }
 
 .buy-now-btn:hover, .how-its-made-btn:hover {
+  color: var(--accent-color);
+  background-color: #fcf1e0;
   transform: scale(1.1);
 }
 
@@ -236,6 +245,10 @@ a {
   height: 28px;
 }
 
+.scroll-down-btn:hover {
+  transform: scale(1.1);
+}
+
 .buy-now-modal {
   z-index: 5;
   backdrop-filter: blur(5px);
@@ -256,24 +269,10 @@ a {
   border-radius: 15px;
   max-width: 320px;
   height: auto;
-  margin: 0 auto;
+  margin: 2px auto;
   padding: 15px;
   position: relative;
   overflow-y: auto;
-}
-
-.buy-now-modal-content::-webkit-scrollbar {
-  width: 5px;
-}
-
-.buy-now-modal-content::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 10px;
-}
-
-.buy-now-modal-content::-webkit-scrollbar-track {
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .buy-now-modal-content span {
@@ -389,6 +388,52 @@ a {
   width: 261px;
 }
 
+.advantages-wrapper {
+  background-color: var(--secondary-color);
+  justify-content: center;
+  width: 100%;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+}
+
+.logo-container {
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.logo-container img {
+  width: 32px;
+  height: 32px;
+}
+
+.advantages-title {
+  color: var(--primary-color);
+  margin-top: 20px;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.advantages-pharagraph {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.advantages-list {
+  flex-flow: column wrap;
+  justify-content: center;
+  max-width: 375px;
+  display: flex;
+}
+
 @media screen and (width >= 768px) {
   .header {
     justify-content: space-evenly;
@@ -472,6 +517,22 @@ a {
 
   .email input, .phone input, .card input, .comment textarea {
     width: 500px;
+  }
+
+  .advantages-wrapper {
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    display: flex;
+  }
+
+  .advantages-list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 715px;
+    display: grid;
   }
 }
 
@@ -560,6 +621,18 @@ a {
 
   .social-icons-desktop img:hover {
     transform: scale(1.2);
+  }
+
+  .advantages-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    align-items: baseline;
+    max-width: 1156px;
+  }
+
+  .border {
+    border-right: 1px solid #aaa;
+    padding: 10px;
   }
 }
 /*# sourceMappingURL=index.4d663569.css.map */
