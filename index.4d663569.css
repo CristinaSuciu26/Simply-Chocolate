@@ -434,6 +434,163 @@ ul {
   display: flex;
 }
 
+.components-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+}
+
+.component-details {
+  max-width: 418px;
+}
+
+.components-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.components-title span {
+  color: var(--accent-color);
+}
+
+.components-pharagraph {
+  text-align: center;
+  font-size: 14px;
+}
+
+.card-container {
+  perspective: 1000px;
+  width: 270px;
+  height: 270px;
+  position: relative;
+}
+
+.card {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  transition: transform .6s ease-in-out;
+  display: flex;
+  position: relative;
+}
+
+.card-container:hover .card {
+  width: 270px;
+  height: 270px;
+  transform: rotateY(180deg);
+}
+
+.card-front img {
+  width: 224px;
+  height: auto;
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  box-shadow: 0 4px 8px #0003;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.components-list {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.first {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+
+.second, .fourth {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+}
+
+.third {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.card-back-container {
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  display: flex;
+}
+
+.card-ph {
+  height: 162px;
+  font-size: 14px;
+  overflow: auto;
+}
+
+.card-back-container h3 {
+  font-size: 18px;
+}
+
+.card-btn-container {
+  gap: 10px;
+  display: flex;
+}
+
+.card-btn-benefits, .card-btn {
+  cursor: pointer;
+  border-radius: 10px;
+  width: 90px;
+  height: 24px;
+  font-size: 11px;
+  transition: transform .3s;
+}
+
+.card-btn {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.card-btn-benefits {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+}
+
+.card-btn-benefits:hover, .card-btn:hover {
+  color: var(--accent-color);
+  background-color: #fcf1e0;
+  border: none;
+}
+
+.card-ph::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (width >= 768px) {
   .header {
     justify-content: space-evenly;
@@ -533,6 +690,15 @@ ul {
     gap: 40px;
     max-width: 715px;
     display: grid;
+  }
+
+  .components-list {
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .components-title {
+    font-size: 24px;
   }
 }
 
