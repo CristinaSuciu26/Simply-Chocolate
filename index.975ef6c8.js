@@ -600,18 +600,20 @@ var _buyNowModal = require("./js/buyNowModal");
 var _intlTelInput = require("./js/intl-tel-input");
 var _scrollDown = require("./js/scrollDown");
 var _sidebar = require("./js/sidebar");
+var _videoPlayer = require("./js/videoPlayer");
 document.addEventListener("DOMContentLoaded", async ()=>{
     try {
         (0, _sidebar.sidebar)();
         (0, _scrollDown.scrollDown)();
         (0, _buyNowModal.buyNowModal)();
+        (0, _videoPlayer.videoPlayer)();
         (0, _intlTelInput.telInput)();
     } catch (error) {
-        console.error('Error initializing modules:', error); // Add error logging for better debugging
+        console.error("Error initializing modules:", error); // Add error logging for better debugging
     }
 });
 
-},{"./js/buyNowModal":"b2shm","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/intl-tel-input":"coX7G"}],"b2shm":[function(require,module,exports,__globalThis) {
+},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/videoPlayer":"8PYef"}],"b2shm":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
@@ -660,7 +662,20 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"6Ugjs":[function(require,module,exports,__globalThis) {
+},{}],"coX7G":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "telInput", ()=>telInput);
+const telInput = ()=>{
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+        initialCountry: "us",
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"6Ugjs":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "scrollDown", ()=>scrollDown);
@@ -702,16 +717,22 @@ const sidebar = ()=>{
     document.getElementById("close-icon").addEventListener("click", toggleSidebar);
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"coX7G":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"8PYef":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "telInput", ()=>telInput);
-const telInput = ()=>{
-    const input = document.querySelector("#phone");
-    const iti = window.intlTelInput(input, {
-        initialCountry: "us",
-        separateDialCode: true,
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+parcelHelpers.export(exports, "videoPlayer", ()=>videoPlayer);
+const videoPlayer = ()=>{
+    document.getElementById("thumbnail").addEventListener("click", function() {
+        let videoContainer = document.getElementById("video-container");
+        const playButton = document.getElementById("thumbnail");
+        playButton.style.display = "none";
+        videoContainer.innerHTML = `
+    <iframe    class="how-its-made"
+          src="https://www.youtube.com/embed/xPe1jMuX32s?autoplay=1" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+    </iframe>`;
     });
 };
 

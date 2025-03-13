@@ -11,6 +11,7 @@ body {
   align-items: center;
   font-family: Montserrat, sans-serif;
   display: flex;
+  overflow-x: hidden;
 }
 
 :root {
@@ -52,7 +53,6 @@ ul {
   font-size: 14px;
   font-style: italic;
   font-weight: 700;
-  line-height: 18px;
 }
 
 .sidebar {
@@ -440,7 +440,7 @@ ul {
   align-items: center;
   gap: 30px;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 128px;
   padding: 20px;
   display: flex;
 }
@@ -591,6 +591,72 @@ ul {
   display: none;
 }
 
+.how-its-made img, .how-its-made iframe {
+  object-fit: cover;
+  border-radius: 33px;
+  width: 335px;
+  height: 500px;
+  padding: 20px;
+}
+
+.play-btn {
+  position: relative;
+  top: 210px;
+  left: 144px;
+}
+
+#video-container {
+  width: 335px;
+  height: 500px;
+  position: absolute;
+}
+
+.how-its-made-container {
+  flex-direction: column;
+  gap: 450px;
+  display: flex;
+}
+
+.how-its-made-wrapper h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.how-its-made-wrapper span {
+  color: var(--accent-color);
+}
+
+.how-its-made-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 128px;
+  padding: 20px;
+  display: flex;
+}
+
+.recipe-list {
+  list-style-type: inherit;
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 20px;
+  width: 293px;
+  margin: 50px 20px 20px;
+  padding: 25px 25px 25px 37px;
+  display: flex;
+}
+
+.recipe-list h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.recipe-list li {
+  font-size: 14px;
+}
+
 @media screen and (width >= 768px) {
   .header {
     justify-content: space-evenly;
@@ -672,7 +738,7 @@ ul {
     padding-right: 87px;
   }
 
-  .email input, .phone input, .card input, .comment textarea {
+  .email input, .phone input, .card-number input, .comment textarea {
     width: 500px;
   }
 
@@ -700,6 +766,24 @@ ul {
   .components-title {
     font-size: 24px;
   }
+
+  .recipe-list {
+    width: 582px;
+  }
+
+  .how-its-made-container {
+    gap: 350px;
+  }
+
+  .play-btn {
+    top: 180px;
+    left: 276px;
+  }
+
+  .how-its-made img, .how-its-made iframe {
+    width: 614px;
+    height: 400px;
+  }
 }
 
 @media screen and (width >= 1280px) {
@@ -708,7 +792,7 @@ ul {
   }
 
   .header-img {
-    width: 1136px;
+    width: 1186px;
   }
 
   .logo-wrapper {
@@ -799,6 +883,24 @@ ul {
   .border {
     border-right: 1px solid #aaa;
     padding: 10px;
+  }
+
+  .how-its-made-container {
+    flex-direction: row;
+    gap: 560px;
+    display: flex;
+  }
+
+  .play-btn {
+    top: 178px;
+    left: 278px;
+  }
+
+  .recipe-list {
+    width: 584px;
+    height: 361px;
+    margin-top: 24px;
+    margin-left: 54px;
   }
 }
 /*# sourceMappingURL=index.4d663569.css.map */
