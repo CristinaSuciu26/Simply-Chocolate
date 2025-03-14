@@ -591,33 +591,32 @@ ul {
   display: none;
 }
 
-.how-its-made img, .how-its-made iframe {
+#video-container img, #video-container iframe {
   object-fit: cover;
-  border-radius: 33px;
+  border-radius: 15px;
   width: 335px;
   height: 500px;
-  padding: 20px;
+  display: block;
+}
+
+#video-container iframe {
+  margin-bottom: 40px;
 }
 
 .play-btn {
   position: relative;
-  top: 210px;
-  left: 144px;
-}
-
-#video-container {
-  width: 335px;
-  height: 500px;
-  position: absolute;
+  bottom: 285px;
 }
 
 .how-its-made-container {
   flex-direction: column;
-  gap: 450px;
+  align-items: center;
   display: flex;
+  position: relative;
 }
 
 .how-its-made-wrapper h2 {
+  margin-bottom: 25px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -631,19 +630,18 @@ ul {
   justify-content: center;
   align-items: center;
   margin-top: 128px;
-  padding: 20px;
   display: flex;
 }
 
 .recipe-list {
   list-style-type: inherit;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   flex-direction: column;
   gap: 20px;
-  width: 293px;
-  margin: 50px 20px 20px;
-  padding: 25px 25px 25px 37px;
+  width: 335px;
+  margin-bottom: 15px;
+  padding: 30px;
   display: flex;
 }
 
@@ -768,19 +766,14 @@ ul {
   }
 
   .recipe-list {
-    width: 582px;
-  }
-
-  .how-its-made-container {
-    gap: 350px;
+    width: 613px;
   }
 
   .play-btn {
-    top: 180px;
-    left: 276px;
+    bottom: 237px;
   }
 
-  .how-its-made img, .how-its-made iframe {
+  #video-container img, #video-container iframe {
     width: 614px;
     height: 400px;
   }
@@ -887,20 +880,28 @@ ul {
 
   .how-its-made-container {
     flex-direction: row;
-    gap: 560px;
     display: flex;
   }
 
   .play-btn {
-    top: 178px;
-    left: 278px;
+    top: 10px;
+    left: -332px;
+  }
+
+  #video-container iframe, #video-container img {
+    width: 584px;
+    height: 361px;
+  }
+
+  #video-container iframe {
+    margin-bottom: 0;
+    margin-right: 40px;
   }
 
   .recipe-list {
     width: 584px;
     height: 361px;
     margin-top: 24px;
-    margin-left: 54px;
   }
 }
 /*# sourceMappingURL=index.4d663569.css.map */
