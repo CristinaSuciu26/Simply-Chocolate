@@ -697,6 +697,7 @@ const sidebar = ()=>{
     const sidebar = document.getElementById("sidebar");
     const closeIcon = document.getElementById("close-icon");
     const socials = document.getElementById("social-icons");
+    const options = document.querySelectorAll(".option");
     function toggleSidebar() {
         if (sidebar.style.right === "-520px" || sidebar.style.right === "") {
             sidebar.style.right = "0px";
@@ -711,6 +712,18 @@ const sidebar = ()=>{
             }, 90);
         }
     }
+    function closeSidebar() {
+        sidebar.style.right = "-520px";
+        setTimeout(()=>{
+            sidebar.style.display = "none";
+            socials.style.display = "none";
+            closeIcon.style.display = "none";
+        }, 90);
+    }
+    // Add event listener to all menu options
+    options.forEach((option)=>{
+        option.addEventListener("click", closeSidebar);
+    });
     // Add event listener to toggle button
     document.getElementById("toggle-button").addEventListener("click", toggleSidebar);
     // Add event listener to close icon
@@ -722,18 +735,34 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "videoPlayer", ()=>videoPlayer);
 const videoPlayer = ()=>{
+    const videoContainer = document.getElementById("video-container");
+    const playButton = document.getElementById("thumbnail");
     document.getElementById("thumbnail").addEventListener("click", function() {
-        let videoContainer = document.getElementById("video-container");
-        const playButton = document.getElementById("thumbnail");
         playButton.style.display = "none";
         videoContainer.innerHTML = `
-    <iframe    class="how-its-made"
-          src="https://www.youtube.com/embed/xPe1jMuX32s?autoplay=1" 
+    <iframe  class="how-its-made" id="youtube-video"
+          src="https://www.youtube.com/embed/xPe1jMuX32s?autoplay=1&enablejsapi=1" 
           frameborder="0" 
           allow="autoplay; encrypted-media" 
+          
           allowfullscreen>
+
     </iframe>`;
     });
+    const pauseVideo = ()=>{
+        const iframe = document.getElementById("youtube-video");
+        if (iframe) iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
+    };
+    // Create Intersection Observer
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) pauseVideo();
+        });
+    }, {
+        threshold: 0
+    });
+    // Observe the video container
+    observer.observe(videoContainer);
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}]},["lIktk","8lqZg"], "8lqZg", "parcelRequire94c2")
