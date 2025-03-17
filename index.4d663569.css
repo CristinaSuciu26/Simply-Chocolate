@@ -58,7 +58,7 @@ ul {
 .sidebar {
   background-color: var(--secondary-color);
   width: 34vh;
-  height: 100vh;
+  height: 100%;
   color: var(--primary-color);
   z-index: 15;
   justify-content: center;
@@ -81,6 +81,10 @@ ul {
   flex-direction: column;
   gap: 24px;
   display: flex;
+}
+
+.sidebar-desktop {
+  display: none;
 }
 
 .sidebar a {
@@ -272,7 +276,11 @@ ul {
   margin: 2px auto;
   padding: 15px;
   position: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
+}
+
+.iti__country-name {
+  font-size: 13px !important;
 }
 
 .buy-now-modal-content span {
@@ -740,6 +748,10 @@ ul {
     width: 500px;
   }
 
+  .iti__country-list {
+    width: 497px;
+  }
+
   .advantages-wrapper {
     flex-direction: column;
     align-items: center;
@@ -792,37 +804,30 @@ ul {
     width: 75%;
   }
 
-  .toggle-button {
+  .toggle-button, .mobile-list a {
     display: none;
   }
 
-  .sidebar {
-    z-index: 0;
-    background-color: #0000;
+  .sidebar-desktop {
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     width: 100%;
-    height: auto;
-    display: flex;
-    position: static;
-  }
-
-  .sidebar-content {
-    flex-direction: row;
-    gap: 40px;
-  }
-
-  .sidebar-list {
-    color: var(--secondary-color);
-    flex-direction: row;
     display: flex;
   }
 
-  .sidebar-list a {
+  .desktop-list {
+    gap: 18px;
+    display: flex;
+  }
+
+  .desktop-list a {
     transition: transform .3s;
   }
 
-  .sidebar-list a:hover {
+  .desktop-list a:hover {
+    color: var(--accent-color);
     transform: scale(1.2);
   }
 

@@ -697,7 +697,8 @@ const sidebar = ()=>{
     const sidebar = document.getElementById("sidebar");
     const closeIcon = document.getElementById("close-icon");
     const socials = document.getElementById("social-icons");
-    const options = document.querySelectorAll(".option");
+    const mobileOptions = document.querySelectorAll(".mobile-list a");
+    const desktopOptions = document.querySelectorAll(".desktop-list a");
     function toggleSidebar() {
         if (sidebar.style.right === "-520px" || sidebar.style.right === "") {
             sidebar.style.right = "0px";
@@ -707,23 +708,47 @@ const sidebar = ()=>{
         } else {
             sidebar.style.right = "-520px";
             setTimeout(()=>{
+                sidebar.style.display = "none";
                 socials.style.display = "none";
                 closeIcon.style.display = "none";
             }, 90);
         }
     }
-    function closeSidebar() {
+    const closeSidebar = ()=>{
         sidebar.style.right = "-520px";
         setTimeout(()=>{
             sidebar.style.display = "none";
             socials.style.display = "none";
             closeIcon.style.display = "none";
         }, 90);
-    }
-    // Add event listener to all menu options
-    options.forEach((option)=>{
-        option.addEventListener("click", closeSidebar);
+    };
+    // Smooth scroll function
+    const scrollToSection = (event)=>{
+        event.preventDefault();
+        const targetId = event.target.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) targetElement.scrollIntoView({
+            behavior: "smooth"
+        });
+        closeSidebar();
+    };
+    // Add smooth scroll to both mobile & desktop options
+    [
+        ...mobileOptions,
+        ...desktopOptions
+    ].forEach((option)=>{
+        option.addEventListener("click", scrollToSection);
     });
+    // Hide sidebar when resizing to desktop
+    const handleResize = ()=>{
+        if (window.innerWidth > 768) {
+            sidebar.style.display = "none";
+            sidebar.style.right = "-520px";
+        }
+    };
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+    handleResize();
     // Add event listener to toggle button
     document.getElementById("toggle-button").addEventListener("click", toggleSidebar);
     // Add event listener to close icon
