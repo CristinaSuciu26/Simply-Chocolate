@@ -664,6 +664,92 @@ ul {
   font-size: 14px;
 }
 
+.our-products-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 340px;
+  margin-top: 128px;
+  display: flex;
+}
+
+.our-products-title {
+  color: var(--accent-color);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 32px auto;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  background-color: #fff;
+  border: 1px solid #cec8c8;
+  border-radius: 15px;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 360px;
+  display: flex;
+}
+
+.swiper-slide img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #000;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+}
+
+.swiper-slide h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chocolate-details {
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  display: flex;
+}
+
+.chocolate-details span {
+  font-size: 12px;
+}
+
+.our-products-title {
+  font-size: 24px;
+}
+
+.chocolate-price {
+  width: 94px;
+  height: 33px;
+  color: var(--secondary-color);
+  text-align: center;
+  background-color: #1111111a;
+  border: 1px solid #cec8c8;
+  border-radius: 20px;
+  margin-top: 18px;
+  padding: 8px;
+}
+
 @media screen and (width >= 768px) {
   .header {
     justify-content: space-evenly;
@@ -774,7 +860,7 @@ ul {
     justify-content: center;
   }
 
-  .components-title {
+  .components-title, .how-its-made-wrapper h2 {
     font-size: 24px;
   }
 
@@ -789,6 +875,10 @@ ul {
   #video-container img, #video-container iframe {
     width: 614px;
     height: 400px;
+  }
+
+  .our-products-wrapper {
+    max-width: 700px;
   }
 }
 
@@ -908,6 +998,14 @@ ul {
     width: 584px;
     height: 361px;
     margin-top: 24px;
+  }
+
+  .our-products-wrapper {
+    max-width: 1200px;
+  }
+
+  .our-products-title {
+    font-size: 24px;
   }
 }
 /*# sourceMappingURL=index.4d663569.css.map */

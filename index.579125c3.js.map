@@ -1,1 +1,0 @@
-{"mappings":"AAAA,SAAS,gBAAgB,CAAC,oBAAoB;IAC5C,IAAG;QACD;IAEF,EAAE,OAAM,OAAM,CAEd;AACF","sources":["src/index.js"],"sourcesContent":["document.addEventListener(\"DOMContentLoaded\", async () =>{\r\n  try{\r\n    side\r\n\r\n  } catch(error){\r\n\r\n  }\r\n})"],"names":[],"version":3,"file":"index.579125c3.js.map","sourceRoot":"/__parcel_source_root/"}
