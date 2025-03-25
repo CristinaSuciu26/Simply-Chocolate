@@ -701,6 +701,7 @@ const sidebar = ()=>{
     const socials = document.getElementById("social-icons");
     const mobileOptions = document.querySelectorAll(".mobile-list a");
     const desktopOptions = document.querySelectorAll(".desktop-list a");
+    const howItsMadeBtn = document.querySelector(".how-its-made-btn");
     function toggleSidebar() {
         if (sidebar.style.right === "-520px" || sidebar.style.right === "") {
             sidebar.style.right = "0px";
@@ -727,7 +728,8 @@ const sidebar = ()=>{
     // Smooth scroll function
     const scrollToSection = (event)=>{
         event.preventDefault();
-        const targetId = event.target.getAttribute("href");
+        let targetId = event.target.getAttribute("href") || event.target.getAttribute("data-target");
+        if (!targetId) return;
         const targetElement = document.querySelector(targetId);
         if (targetElement) targetElement.scrollIntoView({
             behavior: "smooth"
@@ -740,6 +742,13 @@ const sidebar = ()=>{
         ...desktopOptions
     ].forEach((option)=>{
         option.addEventListener("click", scrollToSection);
+    });
+    if (howItsMadeBtn) howItsMadeBtn.addEventListener("click", (event)=>{
+        event.preventDefault();
+        const targetElement = document.querySelector("#how-its-made");
+        if (targetElement) targetElement.scrollIntoView({
+            behavior: "smooth"
+        });
     });
     // Hide sidebar when resizing to desktop
     const handleResize = ()=>{

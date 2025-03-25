@@ -680,9 +680,11 @@ ul {
 }
 
 .swiper {
-  width: 90%;
+  width: 95%;
   max-width: 1200px;
+  height: 410px;
   margin: 32px auto;
+  padding: 10px;
   overflow: hidden;
 }
 
@@ -710,7 +712,8 @@ ul {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  color: #000;
+  color: var(--accent-color);
+  margin: -41px -5px 5px;
 }
 
 .swiper-pagination {
