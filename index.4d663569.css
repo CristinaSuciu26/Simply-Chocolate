@@ -689,6 +689,7 @@ ul {
 }
 
 .swiper-wrapper {
+  margin-left: 20px;
   display: flex;
 }
 
@@ -767,6 +768,62 @@ ul {
   border-radius: 20px;
   margin-top: 18px;
   padding: 8px;
+}
+
+.top-sellers-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 128px;
+  display: flex;
+}
+
+.top-sellers-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+}
+
+.top-sellers-list-item img {
+  width: 300px;
+  height: auto;
+}
+
+.top-sellers-list {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.top-sellers-list-item {
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 300px;
+  display: flex;
+}
+
+.top-sellers-list-item p {
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.top-sellers-container h2 {
+  margin-bottom: 32px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.top-sellers-title {
+  color: var(--accent-color);
+}
+
+.last-image, .last-image button {
+  display: none;
 }
 
 @media screen and (width >= 768px) {
@@ -899,6 +956,33 @@ ul {
   .our-products-wrapper {
     max-width: 700px;
   }
+
+  .swiper-wrapper {
+    margin-left: 0;
+  }
+
+  .top-sellers-list {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 20px;
+    max-width: 305px;
+  }
+
+  .top-sellers-list-item {
+    max-width: 460px;
+  }
+
+  .top-sellers-list-item button {
+    margin-left: 181px;
+  }
+
+  .top-sellers-list-item img {
+    width: 344px;
+  }
+
+  .top-sellers-container h2 {
+    font-size: 24px;
+  }
 }
 
 @media screen and (width >= 1280px) {
@@ -1025,6 +1109,26 @@ ul {
 
   .our-products-title {
     font-size: 24px;
+  }
+
+  .last-image, .last-image button {
+    display: flex;
+  }
+
+  .top-sellers-list-item img {
+    width: 368px;
+    height: 464px;
+  }
+
+  .top-sellers-list-item button {
+    justify-content: center;
+    align-items: center;
+    margin-left: 264px;
+    display: flex;
+  }
+
+  .second-image button {
+    display: none;
   }
 }
 /*# sourceMappingURL=index.4d663569.css.map */

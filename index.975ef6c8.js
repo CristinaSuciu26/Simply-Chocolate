@@ -621,10 +621,12 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
 const buyNowModal = ()=>{
     const modal = document.getElementById("buy-now-modal");
-    const openBtn = document.getElementById("open-modal-btn");
+    const openBtns = document.querySelectorAll(".open-modal-btn");
     const closeBtn = document.getElementById("close-modal");
-    openBtn.addEventListener("click", function() {
-        modal.style.display = "block";
+    openBtns.forEach((button)=>{
+        button.addEventListener("click", function() {
+            modal.style.display = "block";
+        });
     });
     closeBtn.addEventListener("click", function() {
         modal.style.display = "none";
@@ -785,7 +787,7 @@ const slider = ()=>{
             clickable: true
         },
         autoplay: {
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false
         },
         breakpoints: {
