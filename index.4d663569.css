@@ -273,7 +273,7 @@ ul {
   border-radius: 15px;
   max-width: 320px;
   height: auto;
-  margin: 2px auto;
+  margin: 10px auto;
   padding: 15px;
   position: relative;
   overflow-y: hidden;
@@ -774,7 +774,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 128px;
+  margin-top: 108px;
   display: flex;
 }
 
