@@ -773,6 +773,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "slider", ()=>slider);
 const slider = ()=>{
+    // First Swiper
     new Swiper(".swiper", {
         slidesPerView: "auto",
         spaceBetween: 20,
@@ -803,10 +804,44 @@ const slider = ()=>{
         },
         on: {
             init: function() {
-                console.log("Swiper initialized");
+                console.log("First Swiper initialized");
             },
             slideChangeTransitionEnd: function() {
-                console.log("Slide changed");
+                console.log("First Swiper: Slide changed");
+            }
+        }
+    });
+    // Second Swiper
+    new Swiper(".swiper-container", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        loop: true,
+        centeredSlides: false,
+        pagination: {
+            el: ".swiper-container-pagination",
+            clickable: true
+        },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 2
+            },
+            1280: {
+                slidesPerView: 4
+            }
+        },
+        on: {
+            init: function() {
+                console.log("Second Swiper initialized");
+            },
+            slideChangeTransitionEnd: function() {
+                console.log("Second Swiper: Slide changed");
             }
         }
     });
