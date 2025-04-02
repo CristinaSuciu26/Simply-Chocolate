@@ -816,7 +816,7 @@ const slider = ()=>{
         slidesPerView: "auto",
         spaceBetween: 20,
         loop: true,
-        centeredSlides: false,
+        centeredSlides: true,
         pagination: {
             el: ".swiper-container-pagination",
             clickable: true
