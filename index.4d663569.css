@@ -827,10 +827,10 @@ ul {
 }
 
 .swiper-container {
-  width: 100%;
+  width: 95%;
   max-width: 1200px;
   height: 410px;
-  margin: 32px auto;
+  margin: 0 auto;
   padding: 10px;
   overflow: hidden;
 }
@@ -844,7 +844,12 @@ ul {
 }
 
 .chocolate-loved-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 340px;
+  margin-top: 128px;
+  display: flex;
 }
 
 .chocolate-loved-container h2 {
