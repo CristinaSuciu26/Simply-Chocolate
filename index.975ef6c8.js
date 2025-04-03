@@ -598,6 +598,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"8lqZg":[function(require,module,exports,__globalThis) {
 var _buyNowModal = require("./js/buyNowModal");
 var _intlTelInput = require("./js/intl-tel-input");
+var _reviewModal = require("./js/reviewModal");
 var _scrollDown = require("./js/scrollDown");
 var _sidebar = require("./js/sidebar");
 var _swiper = require("./js/swiper");
@@ -608,6 +609,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         (0, _sidebar.sidebar)();
         (0, _scrollDown.scrollDown)();
         (0, _buyNowModal.buyNowModal)();
+        (0, _reviewModal.reviewModal)();
         (0, _videoPlayer.videoPlayer)();
         (0, _intlTelInput.telInput)();
     } catch (error) {
@@ -615,7 +617,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     }
 });
 
-},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef"}],"b2shm":[function(require,module,exports,__globalThis) {
+},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef","./js/reviewModal":"j6oDW"}],"b2shm":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
@@ -626,13 +628,16 @@ const buyNowModal = ()=>{
     openBtns.forEach((button)=>{
         button.addEventListener("click", function() {
             modal.style.display = "block";
+            document.body.style.overflow = "hidden";
         });
     });
-    closeBtn.addEventListener("click", function() {
+    const closeModal = ()=>{
         modal.style.display = "none";
-    });
+        document.body.style.overflow = "";
+    };
+    closeBtn.addEventListener("click", closeModal);
     window.addEventListener("click", function(event) {
-        if (event.target === modal) modal.style.display = "none";
+        if (event.target === modal) closeModal();
     });
 };
 
@@ -671,11 +676,13 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "telInput", ()=>telInput);
 const telInput = ()=>{
-    const input = document.querySelector("#phone");
-    const iti = window.intlTelInput(input, {
-        initialCountry: "us",
-        separateDialCode: true,
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    const inputs = document.querySelectorAll(".phone-input"); // Select multiple elements
+    inputs.forEach((input)=>{
+        window.intlTelInput(input, {
+            initialCountry: "us",
+            separateDialCode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
     });
 };
 
@@ -801,14 +808,6 @@ const slider = ()=>{
             1280: {
                 slidesPerView: 4
             }
-        },
-        on: {
-            init: function() {
-                console.log("First Swiper initialized");
-            },
-            slideChangeTransitionEnd: function() {
-                console.log("First Swiper: Slide changed");
-            }
         }
     });
     // Second Swiper
@@ -834,14 +833,6 @@ const slider = ()=>{
             },
             1280: {
                 slidesPerView: 4
-            }
-        },
-        on: {
-            init: function() {
-                console.log("Second Swiper initialized");
-            },
-            slideChangeTransitionEnd: function() {
-                console.log("Second Swiper: Slide changed");
             }
         }
     });
@@ -880,6 +871,27 @@ const videoPlayer = ()=>{
     });
     // Observe the video container
     observer.observe(videoContainer);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"j6oDW":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "reviewModal", ()=>reviewModal);
+const reviewModal = ()=>{
+    const modal = document.getElementById("review-modal");
+    const openBtn = document.getElementById("open-modal-review");
+    const closeBtn = document.getElementById("close-modal-review");
+    openBtn.addEventListener("click", function() {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    });
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+    });
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) modal.style.display = "none";
+    });
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}]},["lIktk","8lqZg"], "8lqZg", "parcelRequire94c2")
