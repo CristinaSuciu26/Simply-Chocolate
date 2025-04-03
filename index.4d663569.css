@@ -401,7 +401,6 @@ ul {
   background-color: var(--secondary-color);
   justify-content: center;
   width: 100%;
-  margin-top: 70px;
   padding: 20px;
   display: flex;
 }
