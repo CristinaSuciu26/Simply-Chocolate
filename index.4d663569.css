@@ -1039,13 +1039,9 @@ ul {
     left: 365px;
   }
 
-  .hero {
-    position: static;
-  }
-
   .hero-content {
     align-items: flex-end;
-    bottom: 40px;
+    bottom: 128px;
   }
 
   .hero-pharagraph {
@@ -1219,7 +1215,7 @@ ul {
   }
 
   .header-img img {
-    height: 80%;
+    height: 85%;
   }
 
   .logo-wrapper {
