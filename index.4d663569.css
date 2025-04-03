@@ -1028,11 +1028,19 @@ ul {
     width: 704px;
   }
 
+  .header-img img {
+    height: 80%;
+  }
+
   .scroll-down-container {
     width: 100%;
     font-size: 14px;
     bottom: 6px;
     left: 365px;
+  }
+
+  .hero {
+    position: static;
   }
 
   .hero-content {
@@ -1208,6 +1216,10 @@ ul {
 
   .header-img {
     width: 1186px;
+  }
+
+  .header-img img {
+    height: 80%;
   }
 
   .logo-wrapper {
