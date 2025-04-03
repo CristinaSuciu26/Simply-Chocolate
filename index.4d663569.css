@@ -962,7 +962,18 @@ ul {
   font-weight: 500;
 }
 
-.review-form input, .review-form textarea {
+.review-form textarea {
+  border: 1px solid #cec8c8;
+  border-radius: 8px;
+  width: 263px;
+  height: 85px;
+  padding: 10px;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  display: block;
+}
+
+.review-form input {
   border: 1px solid #cec8c8;
   border-radius: 8px;
   width: 263px;
@@ -1088,12 +1099,7 @@ ul {
     padding-right: 87px;
   }
 
-  .review-form textarea {
-    width: 263px;
-    height: 85px;
-  }
-
-  .review-form .phone input {
+  .review-form textarea, .review-form .phone input {
     width: 263px;
   }
 
