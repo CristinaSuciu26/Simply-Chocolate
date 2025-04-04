@@ -601,6 +601,7 @@ var _intlTelInput = require("./js/intl-tel-input");
 var _reviewModal = require("./js/reviewModal");
 var _scrollDown = require("./js/scrollDown");
 var _sidebar = require("./js/sidebar");
+var _subscribeModal = require("./js/subscribeModal");
 var _swiper = require("./js/swiper");
 var _videoPlayer = require("./js/videoPlayer");
 document.addEventListener("DOMContentLoaded", async ()=>{
@@ -610,6 +611,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         (0, _scrollDown.scrollDown)();
         (0, _buyNowModal.buyNowModal)();
         (0, _reviewModal.reviewModal)();
+        (0, _subscribeModal.subscribeModal)();
         (0, _videoPlayer.videoPlayer)();
         (0, _intlTelInput.telInput)();
     } catch (error) {
@@ -617,7 +619,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     }
 });
 
-},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef","./js/reviewModal":"j6oDW"}],"b2shm":[function(require,module,exports,__globalThis) {
+},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef","./js/reviewModal":"j6oDW","./js/subscribeModal":"34yun"}],"b2shm":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
@@ -891,6 +893,27 @@ const reviewModal = ()=>{
     });
     window.addEventListener("click", function(event) {
         if (event.target === modal) modal.style.display = "none";
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"34yun":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "subscribeModal", ()=>subscribeModal);
+const subscribeModal = ()=>{
+    const modal = document.getElementById("subscribe-modal");
+    const openBtn = document.getElementById("open-modal-subscribe");
+    const closeBtn = document.getElementById("close-modal-subscribe");
+    openBtn.addEventListener("click", function() {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    });
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+    });
+    window.addEventListener("click", function(event) {
+        if (event.target == modal) modal.style.display = "none";
     });
 };
 
