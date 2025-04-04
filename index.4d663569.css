@@ -152,6 +152,7 @@ ul {
 
 .hero {
   justify-content: center;
+  margin-bottom: 40px;
   display: flex;
   position: relative;
 }
@@ -1038,9 +1039,13 @@ ul {
     left: 365px;
   }
 
+  .hero {
+    margin-bottom: -106px;
+  }
+
   .hero-content {
     align-items: flex-end;
-    bottom: 128px;
+    bottom: 227px;
   }
 
   .hero-pharagraph {
@@ -1260,6 +1265,14 @@ ul {
 
   .hero-btn {
     margin-right: 410px;
+  }
+
+  .hero-content {
+    bottom: 130px;
+  }
+
+  .hero {
+    margin-bottom: 26px;
   }
 
   .hero-pharagraph {
