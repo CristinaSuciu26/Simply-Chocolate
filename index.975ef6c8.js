@@ -601,6 +601,7 @@ var _intlTelInput = require("./js/intl-tel-input");
 var _reviewModal = require("./js/reviewModal");
 var _scrollDown = require("./js/scrollDown");
 var _sidebar = require("./js/sidebar");
+var _smoothScrollJs = require("./js/smoothScroll.js");
 var _subscribeModal = require("./js/subscribeModal");
 var _swiper = require("./js/swiper");
 var _videoPlayer = require("./js/videoPlayer");
@@ -612,6 +613,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         (0, _buyNowModal.buyNowModal)();
         (0, _reviewModal.reviewModal)();
         (0, _subscribeModal.subscribeModal)();
+        (0, _smoothScrollJs.smoothScroll)();
         (0, _videoPlayer.videoPlayer)();
         (0, _intlTelInput.telInput)();
     } catch (error) {
@@ -619,7 +621,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     }
 });
 
-},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef","./js/reviewModal":"j6oDW","./js/subscribeModal":"34yun"}],"b2shm":[function(require,module,exports,__globalThis) {
+},{"./js/buyNowModal":"b2shm","./js/intl-tel-input":"coX7G","./js/scrollDown":"6Ugjs","./js/sidebar":"dtJiX","./js/swiper":"rrgcw","./js/videoPlayer":"8PYef","./js/reviewModal":"j6oDW","./js/subscribeModal":"34yun","./js/smoothScroll.js":"ax0jI"}],"b2shm":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "buyNowModal", ()=>buyNowModal);
@@ -914,6 +916,28 @@ const subscribeModal = ()=>{
     });
     window.addEventListener("click", function(event) {
         if (event.target == modal) modal.style.display = "none";
+    });
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1U20b"}],"ax0jI":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "smoothScroll", ()=>smoothScroll);
+const smoothScroll = ()=>{
+    // Select all links in the footer
+    const links = document.querySelectorAll(".footer-list a");
+    // Function to handle scrolling
+    const scrollToSection = (event)=>{
+        event.preventDefault();
+        const targetId = event.target.getAttribute("href");
+        if (!targetId) return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) targetElement.scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+    links.forEach((link)=>{
+        link.addEventListener("click", scrollToSection);
     });
 };
 
