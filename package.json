@@ -4,7 +4,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
+    "build": "parcel build src/index.html --public-url ./",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -17,10 +17,14 @@
   "bugs": {
     "url": "https://github.com/CristinaSuciu26/Simply-Chocolate/issues"
   },
-  "homepage": "https://github.com/CristinaSuciu26/Simply-Chocolate#readme",
+  "homepage": "https://cristinasuciu26.github.io/Simply-Chocolate/",
   "description": "",
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "svgo": "^3.3.2"
+  },
+  "dependencies": {
+    "bxslider": "^4.2.17",
+    "swiper": "^11.2.6"
   }
 }

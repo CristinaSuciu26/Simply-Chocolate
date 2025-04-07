@@ -1,22 +1,25 @@
-const sidebar = document.getElementById("sidebar");
+import { buyNowModal } from "./js/buyNowModal";
+import { telInput } from "./js/intl-tel-input";
+import { reviewModal } from "./js/reviewModal";
+import { scrollDown } from "./js/scrollDown";
+import { sidebar } from "./js/sidebar";
+import { smoothScroll } from "./js/smoothScroll.js";
+import { subscribeModal } from "./js/subscribeModal";
+import { slider } from "./js/swiper";
+import { videoPlayer } from "./js/videoPlayer";
 
-function toggleSidebar() {
-  if (sidebar.style.right === "-520px" || sidebar.style.right === "") {
-    sidebar.style.right = "0px";
-    sidebar.style.display = "flex";
-  } else {
-    sidebar.style.right = "-520px";
-
-    setTimeout(() => {
-      sidebar.style.display = "none";
-    }, 300);
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    slider();
+    sidebar();
+    scrollDown();
+    buyNowModal();
+    reviewModal();
+    subscribeModal();
+    smoothScroll();
+    videoPlayer();
+    telInput();
+  } catch (error) {
+    console.error("Error initializing modules:", error);
   }
-}
-
-// Add event listener to toggle button
-document
-  .getElementById("toggle-button")
-  .addEventListener("click", toggleSidebar);
-
-// Add event listener to close icon
-document.getElementById("close-icon").addEventListener("click", toggleSidebar);
+});
