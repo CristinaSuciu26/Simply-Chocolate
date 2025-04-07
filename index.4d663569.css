@@ -712,21 +712,6 @@ ul {
   height: auto;
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: var(--accent-color);
-  margin: -41px 5px;
-}
-
-.swiper-button-next:after, .swiper-button-prev:after {
-  border-radius: 5%;
-  padding: 10px;
-  transition: background-color .3s, transform .2s;
-}
-
-.swiper-button-next:hover:after, .swiper-button-prev:hover:after {
-  background-color: #e9d5b7;
-}
-
 .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
   border-radius: 4px;
@@ -831,7 +816,7 @@ ul {
   max-width: 360px;
   height: 410px;
   margin: 0 auto;
-  padding: 10px;
+  padding-top: 10px;
   overflow: hidden;
 }
 
