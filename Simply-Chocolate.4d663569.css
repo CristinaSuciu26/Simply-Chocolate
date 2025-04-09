@@ -812,13 +812,13 @@ ul {
 }
 
 .swiper-container {
-  z-index: 0;
   width: 95%;
   max-width: 360px;
   height: 410px;
   margin: 0 auto;
   padding-top: 10px;
   overflow: hidden;
+  z-index: 0 !important;
 }
 
 .chocolate-loved-container {
@@ -1653,4 +1653,4 @@ ul {
     transform: scale(1.2);
   }
 }
-/*# sourceMappingURL=index.4d663569.css.map */
+/*# sourceMappingURL=Simply-Chocolate.4d663569.css.map */
